@@ -1,0 +1,81 @@
+
+import java.io.IOException;
+public class Main
+{
+  public static void main (String[]args) throws IOException
+  {
+
+      Conta c1 = new Conta();
+
+          c1.nome_titular = "Hugo";
+          c1.num = 123;
+          c1.agencia = "45678-9";
+          c1.saldo = 50.0;
+          c1.dataAbertura = "04/06/2015";
+          c1.deposita(100.0);
+
+          Conta c2 = new Conta();        
+          c2.nome_titular = "Danilo";
+          c2.num = 321;
+          c2.agencia = "1234-9";
+          c2.saldo = 100;
+
+          
+          
+           c2.dataAbertura = "12/08/2015";
+          c2.deposita(200.0);
+
+
+
+      
+       c1.recuperaDadosParaImpressao();
+       System.out.println("-------------------------");
+        c2.recuperaDadosParaImpressao();
+      
+         
+  
+
+
+  }
+}
+________________________________________________________________________________________________________________________________
+public class Conta {
+
+  String nome_titular;
+  int num;
+  String agencia;
+  double saldo;
+  String dataAbertura;
+  
+  
+
+
+   
+      public  void saca(double valor) {
+          this.saldo -= valor;
+          
+      
+   } 
+      public  void deposita(double valor) {
+         this.saldo += valor;
+          
+    
+   }
+     public void calculaRendimento(double valor) {
+         this.saldo *= 0.1;  
+          
+          
+      
+   }
+
+    
+      public void recuperaDadosParaImpressao() {
+         System.out.println("\n Titular: \n" + this.nome_titular + "\n Número: \n " + this.num +  "\n Agencia:\n" + this.agencia + "\n Saldo: \n" + this.saldo + "\n Dia da Abertura: \n " + this.dataAbertura  );
+
+      }
+
+  
+
+  }
+
+
